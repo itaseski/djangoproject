@@ -1,9 +1,47 @@
 The best tutorial is always original documentation despite the fact it is not easy to read and hard to understand.
 
-Врз оснав на polls.models.py ќе се обидам да направам модел work_description/models.py 
+**workdescription/models.py**
 
-Креирање на модели
 
-Work_description
-Sub_category
-Category
+
+    from django.db import models
+
+    from time import timezone
+
+
+    class Part(models.Model):
+        title = models.CharField(max_length=128)
+        publish = models.DateTimeField()
+        created = models.DateTimeField(auto_now_add=True)
+        updated = models.DateTimeField(auto_now=True)
+
+        def __str__(self):
+            return self.title
+
+
+
+    class Category(models.Model):
+        title = models.CharField(max_length=128)
+        publish = models.DateTimeField()
+        created = models.DateTimeField(auto_now_add=True)
+        updated = models.DateTimeField(auto_now=True)
+
+        part = models.ForeignKey(Part, on_delete=models.CASCADE)
+
+        def __str__(self):
+            return self.title
+
+
+    class WorkDescription(models.Model):
+        title = models.CharField(max_length=128)
+        content = models.TextField()
+        publish = models.DateTimeField()
+        created = models.DateTimeField(auto_now_add=True)
+        updated = models.DateTimeField(auto_now=True)
+
+        category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+        def __str__(self):
+            return self.title
+
+
