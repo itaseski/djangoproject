@@ -1,0 +1,456 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{% block description %}Zane and Tete recipes for Jasna{% endblock %}" />
+    <meta name="keywords" content="{% block keyword %}Recipe, Tete, Zane, Jasna, Django 4{% endblock %}" />
+    <meta name="author"
+        content="On sholders of Bootstrap5, Python 3.11, Django4.1, VS Code and many more sources from internet" />
+
+    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:version" content="5.3" />
+
+    <title>{% block title %}Tete :: Base{% endblock %}</title>
+
+    <script src="{% static 'js/color-modes.js' %}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <link href="{% static 'css/docs.css' %}" rel="stylesheet" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon/two-macarons.ico' %}" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{% static 'assets/images/favicon/two-macaron-180-180.png' %}" sizes="180x180" />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json" />
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9" />
+    <link rel="icon" href="{% static 'assets/images/favicon/two-macarons.ico' %}" />
+    <meta name="theme-color" content="#712cf9" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@getbootstrap" />
+    <meta name="twitter:creator" content="@getbootstrap" />
+    <meta name="twitter:title" content="Bootstrap" />
+    <meta name="twitter:description"
+        content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins." />
+    <meta name="twitter:image" content="/docs/5.3/assets/brand/bootstrap-social.png" />
+
+    <meta property="og:url" content="https://getbootstrap.com/" />
+    <meta property="og:title" content="Bootstrap" />
+    <meta property="og:description"
+        content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image" content="/docs/5.3/assets/brand/bootstrap-social.png" />
+
+    <script defer src="https://cdn.usefathom.com/script.js" data-site="ITUSEYJG"></script>
+
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+    <style>
+        .text-theme {
+            --bs-text-opacity: 1;
+            color: var(--bs-indigo) !important;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="skippy visually-hidden-focusable overflow-hidden">
+        <div class="container-xl">
+            <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+    </div>
+
+    <!-- bs5 icons -->
+    {% include "celik/includes/_bs5-icons.html" %}
+
+    <!-- header - main navigation -->
+
+    <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+        <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+            <div class="d-lg-none" style="width: 1.5rem"></div>
+
+            <a class="navbar-brand p-0 me-0 me-lg-2" href="{% url 'celik:index' %}" aria-label="Macarons">
+                <svg fill="#b895fc" height="40" width="40" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 297.001 297.001" xml:space="preserve">
+                    <g>
+                        <path d="M214.691,221.778c-2.271-2.699-4.419-5.248-6.838-7.227c-1.949-1.592-4.705-3.002-7.623-4.496
+                        c-4.466-2.285-9.526-4.875-13.751-9.123c-3.687-3.709-6.006-8.15-8.248-12.447c-1.707-3.271-3.32-6.361-5.339-8.693
+                        c-2.018-2.332-4.844-4.371-7.835-6.531c-3.929-2.836-7.993-5.77-11.132-9.949c-3.598-4.793-5.435-10.176-7.055-14.926
+                        c-1.059-3.102-2.059-6.031-3.355-8.189c-1.607-2.68-3.822-5.17-6.168-7.807c-3.508-3.945-7.136-8.025-9.08-13.24
+                        c-2.699-7.238-2.16-14.195-1.403-20.055c-1.285,1.428-2.316,2.973-3.128,4.615c-8.551-0.93-17.792-1.434-27.693-1.434
+                        c-55.469,0-91.311,15.137-91.311,38.563c0,31.418,63.856,34.81,91.311,34.81c12.735,0,33.292-0.742,51.683-4.664
+                        c3.686,4.941,7.317,9.471,10.561,13.359c-15.327,4.111-35.591,6.611-62.243,6.611c-54.974,0-82.849-10.607-96.043-24.139
+                        c0.334,3.793,3.472,7.068,8.464,11.855c0.731,0.701,1.462,1.4,2.176,2.104c1.506,1.482,2.93,3.1,4.308,4.666
+                        c3.515,3.998,6.835,7.773,11.38,9.465c2.034,0.758,4.858,0.861,7.609,0.861c0.92,0,1.854-0.014,2.796-0.025
+                        c1.03-0.014,2.072-0.027,3.119-0.027c2.632,0,6.107,0.078,9.654,0.697c4.085,0.711,7.856,2.236,11.505,3.713
+                        c3.942,1.596,7.667,3.102,11.218,3.35c0.299,0.021,0.599,0.029,0.901,0.029c2.714,0,5.925-0.76,9.323-1.563
+                        c4.088-0.967,8.721-2.063,13.59-2.063c4.869,0,9.501,1.096,13.587,2.063c3.399,0.803,6.61,1.563,9.325,1.563
+                        c0.303,0,0.604-0.01,0.904-0.031c3.551-0.246,7.275-1.752,11.219-3.348c3.646-1.477,7.416-3.002,11.498-3.713
+                        c3.548-0.619,7.023-0.697,9.655-0.697c1.048,0,2.089,0.014,3.12,0.027c0.941,0.012,1.876,0.025,2.796,0.025
+                        c2.75,0,5.576-0.105,7.611-0.861c0.421-0.156,0.826-0.338,1.227-0.531c3.647,4.055,7.24,7.865,10.765,11.416
+                        c-1.981,1.344-4.175,2.539-6.652,3.461c-4.305,1.602-8.768,1.822-12.95,1.822c-0.988,0-1.991-0.014-3.003-0.027
+                        c-0.963-0.012-1.936-0.027-2.913-0.027c-2.141,0-4.649,0.057-7.027,0.473c-2.479,0.43-5.347,1.592-8.385,2.82
+                        c-4.65,1.883-9.923,4.016-15.901,4.43c-0.65,0.045-1.306,0.066-1.962,0.066c-4.5,0.002-8.744-1.002-12.847-1.973
+                        c-3.591-0.85-6.982-1.65-10.066-1.65s-6.477,0.801-10.067,1.652c-4.103,0.969-8.347,1.973-12.846,1.973
+                        c-0.655,0-1.31-0.021-1.96-0.066c-5.979-0.416-11.25-2.547-15.9-4.43c-3.04-1.23-5.91-2.393-8.391-2.822
+                        c-2.378-0.416-4.887-0.473-7.027-0.473c-0.979,0-1.95,0.016-2.913,0.027c-1.012,0.014-2.014,0.027-3.002,0.027
+                        c-4.183,0-8.646-0.221-12.95-1.822c-7.239-2.697-12.147-7.656-16.082-12.063c3.61,28.881,64.505,32.076,91.139,32.076
+                        c22.319,0,68.688-2.248,85.254-19.971c20.908,20.291,39.286,31.225,52.955,31.225c4.447,0,8.353-1.189,11.876-3.582
+                        c-5.904-0.094-12.865-0.561-19.639-4.27C221.609,229.993,218.092,225.817,214.691,221.778z" />
+                        <path d="M293.957,163.602c-5.47-17.084-17.809-37.033-35.682-57.691c-26.781-30.951-54.203-49.43-73.353-49.43
+                        c-6.105,0-11.191,1.836-15.557,5.611c-23.758,20.559,15.46,71.068,33.425,91.83c28.743,33.219,54.317,51.514,72.011,51.514
+                        c5.385,0,9.983-1.713,14.06-5.242C297.596,192.637,299.31,180.325,293.957,163.602z" />
+                        <path
+                            d="M191.215,163.936c-35.971-41.57-46.189-69.592-44.59-88.422c-2.65,2.734-3.075,7.25-3.427,14.158
+                        c-0.052,1.012-0.104,2.02-0.168,3.02c-0.135,2.107-0.428,4.246-0.711,6.313c-0.723,5.273-1.405,10.254,0.289,14.797
+                        c0.944,2.531,3.487,5.391,6.179,8.416c2.582,2.904,5.508,6.195,7.852,10.1c2.135,3.553,3.447,7.404,4.719,11.127
+                        c1.373,4.025,2.671,7.828,4.809,10.678c1.742,2.32,4.709,4.461,7.851,6.729c3.404,2.457,7.266,5.244,10.451,8.926
+                        c3.186,3.684,5.389,7.904,7.333,11.627c1.792,3.434,3.485,6.678,5.532,8.738c2.508,2.521,6.085,4.352,9.871,6.291
+                        c3.502,1.791,7.122,3.645,10.333,6.266c3.525,2.881,6.361,6.25,8.863,9.223c2.609,3.098,5.074,6.025,7.443,7.322
+                        c4.252,2.332,9.28,2.371,14.603,2.414c2.085,0.016,4.239,0.035,6.345,0.203c1,0.08,2.005,0.174,3.014,0.268
+                        c2.496,0.234,4.854,0.455,7.046,0.455c3.524,0,5.829-0.584,7.584-1.912C250.02,219.407,222.714,200.34,191.215,163.936z" />
+                    </g>
+                </svg>
+            </a>
+
+            <div class="d-flex">
+                <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
+                    <svg class="bi" aria-hidden="true">
+                        <use xlink:href="#three-dots"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar"
+                aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+                <div class="offcanvas-header px-4 pb-0">
+                    <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">
+                        Tete
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close" data-bs-target="#bdNavbar"></button>
+                </div>
+
+                <div class="offcanvas-body p-4 pt-0 p-lg-0">
+                    <hr class="d-lg-none text-white-50" />
+                    <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">  
+                        <li class="nav-item dropdown">
+                            <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                                Рецепти
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="{% url 'celik:cookies' %}">
+                                        Колачи
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="/">
+                                        Торти
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="/">
+                                        Пити
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="/">
+                                        Леб
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="/">
+                                        Слатко
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="{% url 'celik:pikles' %}">
+                                        Туршија
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                        aria-current="true" href="/">
+                                        Јадења
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr class="d-lg-none text-white-50" />
+
+                    <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/twbs" target="_blank"
+                                rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                                    viewBox="0 0 512 499.36" role="img">
+                                    <title>GitHub</title>
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z" />
+                                </svg>
+                                <small class="d-lg-none ms-2">GitHub</small>
+                            </a>
+                        </li>
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="https://twitter.com/getbootstrap"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                                    viewBox="0 0 512 416.32" role="img">
+                                    <title>Twitter</title>
+                                    <path fill="currentColor"
+                                        d="M160.83 416.32c193.2 0 298.92-160.22 298.92-298.92 0-4.51 0-9-.2-13.52A214 214 0 0 0 512 49.38a212.93 212.93 0 0 1-60.44 16.6 105.7 105.7 0 0 0 46.3-58.19 209 209 0 0 1-66.79 25.37 105.09 105.09 0 0 0-181.73 71.91 116.12 116.12 0 0 0 2.66 24c-87.28-4.3-164.73-46.3-216.56-109.82A105.48 105.48 0 0 0 68 159.6a106.27 106.27 0 0 1-47.53-13.11v1.43a105.28 105.28 0 0 0 84.21 103.06 105.67 105.67 0 0 1-47.33 1.84 105.06 105.06 0 0 0 98.14 72.94A210.72 210.72 0 0 1 25 370.84a202.17 202.17 0 0 1-25-1.43 298.85 298.85 0 0 0 160.83 46.92" />
+                                </svg>
+                                <small class="d-lg-none ms-2">Twitter</small>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                            <hr class="d-lg-none my-2 text-white-50" />
+                        </li>
+
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="{% url 'celik:docs_index' %}">Docs</a>
+                        </li>
+
+                        <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                            <hr class="d-lg-none my-2 text-white-50" />
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button
+                                class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+                                id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown"
+                                data-bs-display="static">
+                                <svg class="bi my-1 theme-icon-active">
+                                    <use href="#circle-half"></use>
+                                </svg>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme"
+                                style="--bs-dropdown-min-width: 8rem">
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center"
+                                        data-bs-theme-value="light">
+                                        <svg class="bi me-2 opacity-50 theme-icon">
+                                            <use href="#sun-fill"></use>
+                                        </svg>
+                                        Light
+                                        <svg class="bi ms-auto d-none">
+                                            <use href="#check2"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center"
+                                        data-bs-theme-value="dark">
+                                        <svg class="bi me-2 opacity-50 theme-icon">
+                                            <use href="#moon-stars-fill"></use>
+                                        </svg>
+                                        Dark
+                                        <svg class="bi ms-auto d-none">
+                                            <use href="#check2"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center active"
+                                        data-bs-theme-value="auto">
+                                        <svg class="bi me-2 opacity-50 theme-icon">
+                                            <use href="#circle-half"></use>
+                                        </svg>
+                                        Auto
+                                        <svg class="bi ms-auto d-none">
+                                            <use href="#check2"></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--hero-->
+    
+    {% block hero %}
+    {% endblock %}
+
+    <!--main-->
+    <main>
+
+        <div class="container">
+
+            <div class="row mb-3">
+
+                <div class="col-lg-9 py-lg-4 pe-lg-5">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+
+                <!--aside-->
+                <div class="col-lg-3 py-lg-4 ps-lg-5 border-lg-start">
+                    {% block aside %}
+                    {% endblock %}
+                </div>
+                <!--/aside-->
+            </div>
+
+            <!--Pagination-->
+            {% block pagination %}           
+            {% endblock %}
+            <!--/Pagination-->
+
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+        <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+            <div class="row">
+              <div class="col-lg-3 mb-3">
+                <a class="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/"
+                  aria-label="Bootstrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block me-2" viewBox="0 0 118 94"
+                    role="img">
+                    <title>Bootstrap</title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                      fill="currentColor" />
+                  </svg>
+                  <span class="fs-5">Bootstrap</span>
+                </a>
+                <ul class="list-unstyled small">
+                  <li class="mb-2">
+                    Designed and built with all the love in the world by the
+                    <a href="/docs/5.3/about/team/">Bootstrap team</a> with the help
+                    of
+                    <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.
+                  </li>
+                  <li class="mb-2">
+                    Code licensed
+                    <a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank"
+                      rel="license noopener">MIT</a>, docs
+                    <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC
+                      BY
+                      3.0</a>.
+                  </li>
+                  <li class="mb-2">Currently v5.3.0-alpha1.</li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                <h5>Top Recipes</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><a href="/">Top Recipes</a></li>
+                  <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
+                  <li class="mb-2"><a href="/docs/5.3/examples/">Examples</a></li>
+                  <li class="mb-2">
+                    <a href="https://icons.getbootstrap.com/">Icons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://themes.getbootstrap.com/">Themes</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://blog.getbootstrap.com/">Blog</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 mb-3">
+                <h5>Guides</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="/docs/5.3/getting-started/">Getting started</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/docs/5.3/examples/starter-template/">Starter template</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/docs/5.3/getting-started/webpack/">Webpack</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/docs/5.3/getting-started/parcel/">Parcel</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="/docs/5.3/getting-started/vite/">Vite</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 mb-3">
+                <h5>Projects</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/bootstrap">Bootstrap 5</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/bootstrap/tree/v4-dev">Bootstrap 4</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/icons">Icons</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/rfs">RFS</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/bootstrap-npm-starter">npm starter</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 col-lg-2 mb-3">
+                <h5>Community</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/bootstrap/issues">Issues</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://github.com/twbs/bootstrap/discussions">Discussions</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://github.com/sponsors/twbs">Corporate sponsors</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://opencollective.com/bootstrap">Open Collective</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="https://stackoverflow.com/questions/tagged/bootstrap-5">Stack Overflow</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="../static/js/docs.js"></script>
+</body>
+
+</html>

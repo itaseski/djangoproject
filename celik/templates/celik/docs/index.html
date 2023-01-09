@@ -1,0 +1,444 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tete, Zane, Jasna, Recipe, Build with Django 4 framework" />
+    <meta name="author"
+        content="Me but on sholders of Bootstrap5, Python 3.11, Django4.1, VS Code and many more sources from internet" />
+    <meta name="generator" content="Django " />
+
+    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:version" content="5.3" />
+
+    <title>Tete · Recipe</title>
+
+    <script src="{% static 'js/color-modes.js' %}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link href="{% static 'css/docs.css' %}" rel="stylesheet" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon/two-macarons.ico' %}" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{% static 'assets/images/favicon/two-macaron-180-180.png' %}" sizes="180x180" />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json" />
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9" />
+    <link rel="icon" href="{% static 'assets/images/favicon/two-macarons.ico' %}" />
+    <meta name="theme-color" content="#712cf9" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@getbootstrap" />
+    <meta name="twitter:creator" content="@getbootstrap" />
+    <meta name="twitter:title" content="Bootstrap" />
+    <meta name="twitter:description"
+        content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins." />
+    <meta name="twitter:image" content="/docs/5.3/assets/brand/bootstrap-social.png" />
+
+    <meta property="og:url" content="https://getbootstrap.com/" />
+    <meta property="og:title" content="Bootstrap" />
+    <meta property="og:description"
+        content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image" content="/docs/5.3/assets/brand/bootstrap-social.png" />
+
+    <script defer src="https://cdn.usefathom.com/script.js" data-site="ITUSEYJG"></script>
+
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+</head>
+
+<body>
+    <div class="skippy visually-hidden-focusable overflow-hidden">
+        <div class="container-xl">
+            <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+            <a class="d-none d-md-inline-flex p-2 m-1" href="#bd-docs-nav">Skip to docs navigation</a>
+        </div>
+    </div>
+
+    <!-- bs5 icons -->
+    {% include "celik/includes/_bs5-icons.html" %}
+
+    <!-- header - navigation -->
+    {% include "celik/includes/_header-docs.html" %}
+
+
+
+    <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+
+        <aside class="bd-sidebar">
+
+            <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar"
+                aria-labelledby="bdSidebarOffcanvasLabel">
+
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
+                        Browse docs
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                        data-bs-target="#bdSidebar"></button>
+                </div>
+
+                <!-- offcanvas body -->
+                {% include "celik/includes/_docs-offcanvas-body.html" %}
+
+                           
+
+            </div>
+        </aside>
+
+        <main class="bd-main order-1">
+            <div class="bd-intro pt-2 ps-lg-2">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <div class="mb-3 mb-md-0 d-flex">
+                        <a class="btn btn-sm btn-bd-light rounded-2"
+                            href="https://github.com/twbs/bootstrap/blob/v5.3.0-alpha1/site/content/docs/5.3/getting-started/introduction.md"
+                            title="View and edit this file on GitHub" target="_blank" rel="noopener">
+                            View on GitHub
+                        </a>
+                    </div>
+                    <h1 class="bd-title mb-0" id="content">
+                        Django at a glance
+                    </h1>
+                </div>
+                <p class="bd-lead">
+                    Because Django was developed in a fast-paced newsroom environment, it was designed to make common
+                    web development tasks fast and easy.
+                </p>
+            </div>
+
+            <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+                <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false"
+                    aria-controls="tocContents">
+                    On this page
+                    <svg class="bi d-md-none ms-2" aria-hidden="true">
+                        <use xlink:href="#chevron-expand"></use>
+                    </svg>
+                </button>
+                <strong class="d-none d-md-block h6 my-2">On this page</strong>
+                <hr class="d-none d-md-block my-2" />
+                <div class="collapse bd-toc-collapse" id="tocContents">
+                    <nav id="TableOfContents">
+                        <ul>
+                            <li><a href="#design-your-model">Design your model</a></li>
+                            <li><a href="#install-it">Install it</a></li>
+                            <li><a href="#enjoy-the-free-API">Enjoy the free API</a></li>
+                            <li><a href="#a-dynamic-admin-interface">A dynamic admin interface</a></li>
+                            <li><a href="#design-your-URLs">Dsign your URLs</a></li>
+                            <li><a href="#write-your-views">Write your views</a></li>
+                            <li><a href="#design-your-templates">Design your templates</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="bd-content ps-lg-2">
+
+
+                <h2 id="design-your-model">
+                    Design your model
+                    <a class="anchor-link" href="#quick-start" aria-label="Link to this section: Quick start"></a>
+                </h2>
+                <p>
+                    Although you can use Django without a database, it comes with an
+                    <strong><code>object-relational mapper</code></strong> in which you describe your database layout in
+                    Python code.
+                </p>
+                <p>Here’s a quick example:</p>
+                <div class="highlight-python notranslate">
+                    <div class="highlight">
+                        <span class="caption-text"><code class="docutils literal notranslate"><span class="pre"># mysite/news/models.py</span></code></span>                       
+                        <pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Reporter</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">full_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span>
+
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">headline</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">reporter</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Reporter</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">headline</span>
+</pre>
+                    </div>
+                    
+                    <h2 id="install-it">
+                        Install it
+                        <a class="anchor-link" href="#cdn-links" aria-label="Link to this section: CDN links"></a>
+                    </h2>
+                    <p>Next, run the Django command-line utilities to create the database tables automatically:</p>
+                    <div class="highlight-console notranslate">
+                        <div class="highlight"><pre><span></span><span class="gp">$ </span>python manage.py makemigrations
+<span class="gp">$ </span>python manage.py migrate
+                        </pre></div>
+                        </div>
+                    <h2 id="enjoy-the-free-API">
+                        Enjoy the free API
+                        <a class="anchor-link" href="#next-steps" aria-label="Link to this section: Next steps"></a>
+                    </h2>
+                    <p>With that, you’ve got a free, and rich, Python API to access your data. The API is created on the fly, no code generation necessary:</p>
+                    <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the models we created from our &quot;news&quot; app</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">news.models</span> <span class="kn">import</span> <span class="n">Article</span><span class="p">,</span> <span class="n">Reporter</span>
+
+<span class="c1"># No reporters are in the system yet.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[]</span><span class="o">&gt;</span>
+
+<span class="c1"># Create a new Reporter.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Reporter</span><span class="p">(</span><span class="n">full_name</span><span class="o">=</span><span class="s1">&#39;John Smith&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save the object into the database. You have to call save() explicitly.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># Now it has an ID.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">id</span>
+<span class="mi">1</span>
+
+<span class="c1"># Now the new reporter is in the database.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Reporter</span><span class="p">:</span> <span class="n">John</span> <span class="n">Smith</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+
+<span class="c1"># Fields are represented as attributes on the Python object.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">full_name</span>
+<span class="s1">&#39;John Smith&#39;</span>
+
+<span class="c1"># Django provides a rich database lookup API.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Reporter</span><span class="p">:</span> <span class="n">John</span> <span class="n">Smith</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">full_name__startswith</span><span class="o">=</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Reporter</span><span class="p">:</span> <span class="n">John</span> <span class="n">Smith</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">full_name__contains</span><span class="o">=</span><span class="s1">&#39;mith&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Reporter</span><span class="p">:</span> <span class="n">John</span> <span class="n">Smith</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+    <span class="o">...</span>
+<span class="n">DoesNotExist</span><span class="p">:</span> <span class="n">Reporter</span> <span class="n">matching</span> <span class="n">query</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="o">.</span>
+
+<span class="c1"># Create an article.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="n">pub_date</span><span class="o">=</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">(),</span> <span class="n">headline</span><span class="o">=</span><span class="s1">&#39;Django is cool&#39;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="n">content</span><span class="o">=</span><span class="s1">&#39;Yeah.&#39;</span><span class="p">,</span> <span class="n">reporter</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># Now the article is in the database.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Article</span><span class="p">:</span> <span class="n">Django</span> <span class="ow">is</span> <span class="n">cool</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+
+<span class="c1"># Article objects get API access to related Reporter objects.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reporter</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">full_name</span>
+<span class="s1">&#39;John Smith&#39;</span>
+
+<span class="c1"># And vice versa: Reporter objects get API access to Article objects.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">article_set</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Article</span><span class="p">:</span> <span class="n">Django</span> <span class="ow">is</span> <span class="n">cool</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+
+<span class="c1"># The API follows relationships as far as you need, performing efficient</span>
+<span class="c1"># JOINs for you behind the scenes.</span>
+<span class="c1"># This finds all articles by a reporter whose name starts with &quot;John&quot;.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">reporter__full_name__startswith</span><span class="o">=</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Article</span><span class="p">:</span> <span class="n">Django</span> <span class="ow">is</span> <span class="n">cool</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+
+<span class="c1"># Change an object by altering its attributes and calling save().</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">full_name</span> <span class="o">=</span> <span class="s1">&#39;Billy Goat&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># Delete an object with delete().</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+                        </pre></div>
+                    <h2 id="a-dynamic-admin-interface">
+                        A dynamic admin interface
+                        <a class="anchor-link" href="#js-components"
+                            aria-label="Link to this section: JS components"></a>
+                    </h2>
+                    <p>
+                        Once your models are defined, Django can automatically create a professional, production ready administrative interface – a website that lets authenticated users add, change and delete objects. The only step required is to register your model in the admin site:
+                    </p>
+                    <div class="highlight-python notranslate">
+                        <div class="highlight">
+                            <span class="caption-text"><code class="docutils literal notranslate"><span class="pre"># mysite/news/models.py</span></code></span>                             
+                            <pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">headline</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">reporter</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Reporter</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+                        </pre></div>
+                        <div class="highlight-python notranslate">
+                            <div class="highlight">
+                                <span class="caption-text"><code class="docutils literal notranslate"><span class="pre"># mysite/news/admin.py</span></code></span>
+                                <pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Article</span><span class="p">)</span>
+                        </pre></div>
+                        <p>The philosophy here is that your site is edited by a staff, or a client, or maybe just you – and you don’t want to have to deal with creating backend interfaces only to manage content.</p>
+
+                    <h2 id="design-your-URLs">
+                        Design your URLs
+                        <a class="anchor-link" href="#important-globals"
+                            aria-label="Link to this section: Important globals"></a>
+                    </h2>
+                    <p>
+                        To design URLs for an app, you create a Python module called a URLconf. A table of contents for your app, it contains a mapping between URL patterns and Python callback functions. URLconfs also serve to decouple URLs from Python code.
+                    </p>
+                    <div class="highlight-python notranslate">
+                        <div class="highlight">
+                            <span class="caption-text"><code class="docutils literal notranslate"><span class="pre"># mysite/news/urls.py</span></code></span>
+                            <pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;articles/&lt;int:year&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">year_archive</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;articles/&lt;int:year&gt;/&lt;int:month&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">month_archive</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;articles/&lt;int:year&gt;/&lt;int:month&gt;/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">article_detail</span><span class="p">),</span>
+<span class="p">]</span>
+                    </pre></div>
+                    <h3 id="write-your-views">
+                        Write your views
+                        <a class="anchor-link" href="#html5-doctype"
+                            aria-label="Link to this section: HTML5 doctype"></a>
+                    </h3>
+                    <p>
+                        Generally, a view retrieves data according to the parameters, loads a template and renders the template with the retrieved data.
+                    </p>
+                    <div class="highlight-python notranslate">
+                        <div class="highlight">
+                            <span class="caption-text"><code class="docutils literal notranslate"><span class="pre"># mysite/news/views.py</span></code></span>
+                            <pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Article</span>
+
+<span class="k">def</span> <span class="nf">year_archive</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+    <span class="n">a_list</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pub_date__year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span> <span class="s1">&#39;article_list&#39;</span><span class="p">:</span> <span class="n">a_list</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;news/year_archive.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+                        </pre></div>
+                    <h3 id="design-your-templates">
+                        Design your templates
+                        <a class="anchor-link" href="#responsive-meta-tag"
+                            aria-label="Link to this section: Responsive meta tag"></a>
+                    </h3>
+                    <p>
+                        Django has a template search path, which allows you to minimize redundancy among templates. In your Django settings, you specify a list of directories to check for templates with <strong>DIRS</strong>. If a template doesn’t exist in the first directory, it checks the second, and so on.
+                    </p>
+                    <div class="highlight-html+django notranslate">
+                        <div class="highlight">
+                            <span class="caption-text"><code class="docutils literal notranslate"><span class="pre"># mysite/news/templates/news/index.html</span></code></span>
+                            <pre><span></span><span class="cp">&#123;&#37;</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">&#37;&#125;</span>
+
+<span class="cp">&#123;&#37;</span> <span class="k">block</span> <span class="nv">title</span> <span class="cp">&#37;&#125;</span>Articles for <span class="cp">&#123;&#123;</span> <span class="nv">year</span> <span class="cp">&#125;&#125;&#123;&#37;</span> <span class="k">endblock</span> <span class="cp">&#37;&#125;</span>
+
+<span class="cp">&#123;</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%&#125;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Articles for <span class="cp">&#123;&#123;</span> <span class="nv">year</span> <span class="cp">&#125;&#125;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="cp">&#123;%</span> <span class="k">for</span> <span class="nv">article</span> <span class="k">in</span> <span class="nv">article_list</span> <span class="cp">%&#125;}</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">&#123;&#123;</span> <span class="nv">article.headline</span> <span class="cp">&#125;&#125;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>By <span class="cp">&#123;&#123;</span> <span class="nv">article.reporter.full_name</span> <span class="cp">&#125;&#125;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Published <span class="cp">&#123;&#123;</span> <span class="nv">article.pub_date</span><span class="o">|</span><span class="nf">date</span><span class="s2">:&quot;F j, Y&quot;</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="cp">&#123;%</span> <span class="k">endfor</span> <span class="cp">%&#125;}</span>
+<span class="cp">&#123;%</span> <span class="k">endblock</span> <span class="cp">%&#125;</span>
+                        </pre></div>
+                    
+                </div>
+        </main>
+    </div>
+
+    <!-- footer -->
+    {% include "celik/includes/_footer.html" %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
+
+    <script src="../../../static/assets/js/docs.js"></script>
+
+    <script>
+        document.querySelectorAll(".btn-edit").forEach((btn) => {
+            btn.addEventListener("click", (event) => {
+                const htmlSnippet = event.target
+                    .closest(".bd-code-snippet")
+                    .querySelector(".bd-example").innerHTML;
+
+                const classes = Array.from(
+                    event.target
+                        .closest(".bd-code-snippet")
+                        .querySelector(".bd-example").classList
+                ).join(" ");
+
+                const jsSnippet = event.target
+                    .closest(".bd-code-snippet")
+                    .querySelector(".btn-edit")
+                    .getAttribute("data-sb-js-snippet");
+                StackBlitzSDK.openBootstrapSnippet(htmlSnippet, jsSnippet, classes);
+            });
+        });
+
+        StackBlitzSDK.openBootstrapSnippet = (
+            htmlSnippet,
+            jsSnippet,
+            classes
+        ) => {
+            const markup = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@5.3.0-alpha1\/dist\/css\/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <${"script"} src="https:\/\/cdn\.jsdelivr\.net\/npm\/bootstrap@5\.3\.0\-alpha1\/dist\/js\/bootstrap\.bundle\.min\.js"></${"script"}>
+  </head>
+  <body class="p-3 m-0 border-0 ${classes}">
+
+    <!-- Example Code -->
+${htmlSnippet.replace(/^/gm, "    ")}
+    <!-- End Example Code -->
+  </body>
+</html>`;
+
+            const jsSnippetContent = jsSnippet
+                ? "\/\/ NOTICE!!! Initially embedded in our docs this JavaScript\n\/\/ file contains elements that can help you create reproducible\n\/\/ use cases in StackBlitz for instance\.\n\/\/ In a real project please adapt this content to your needs\.\n\/\/ \u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\u002b\n\n\/\*!\n \* JavaScript for Bootstrap\u0027s docs \(https:\/\/getbootstrap\.com\/\)\n \* Copyright 2011\-2022 The Bootstrap Authors\n \* Copyright 2011\-2022 Twitter, Inc\.\n \* Licensed under the Creative Commons Attribution 3\.0 Unported License\.\n \* For details, see https:\/\/creativecommons\.org\/licenses\/by\/3\.0\/\.\n \*\/\n\n\/\* global bootstrap: false \*\/\n\n\(\(\) =\u003e \{\n  \u0027use strict\u0027\n\n  \/\/ \-\-\-\-\-\-\-\-\n  \/\/ Tooltips\n  \/\/ \-\-\-\-\-\-\-\-\n  \/\/ Instantiate all tooltips in a docs or StackBlitz page\n  document\.querySelectorAll\(\u0027\[data\-bs\-toggle=\u0022tooltip\u0022\]\u0027\)\n    \.forEach\(tooltip =\u003e \{\n      new bootstrap\.Tooltip\(tooltip\)\n    \}\)\n\n  \/\/ \-\-\-\-\-\-\-\-\n  \/\/ Popovers\n  \/\/ \-\-\-\-\-\-\-\-\n  \/\/ Instantiate all popovers in a docs or StackBlitz page\n  document\.querySelectorAll\(\u0027\[data\-bs\-toggle=\u0022popover\u0022\]\u0027\)\n    \.forEach\(popover =\u003e \{\n      new bootstrap\.Popover\(popover\)\n    \}\)\n\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Toasts\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Used by \u0027Placement\u0027 example in docs or StackBlitz\n  const toastPlacement = document\.getElementById\(\u0027toastPlacement\u0027\)\n  if \(toastPlacement\) \{\n    document\.getElementById\(\u0027selectToastPlacement\u0027\)\.addEventListener\(\u0027change\u0027, function \(\) \{\n      if \(!toastPlacement\.dataset\.originalClass\) \{\n        toastPlacement\.dataset\.originalClass = toastPlacement\.className\n      \}\n\n      toastPlacement\.className = `\$\{toastPlacement\.dataset\.originalClass\} \$\{this\.value\}`\n    \}\)\n  \}\n\n  \/\/ Instantiate all toasts in a docs page only\n  document\.querySelectorAll\(\u0027\.bd\-example \.toast\u0027\)\n    \.forEach\(toastNode =\u003e \{\n      const toast = new bootstrap\.Toast\(toastNode, \{\n        autohide: false\n      \}\)\n\n      toast\.show\(\)\n    \}\)\n\n  \/\/ Instantiate all toasts in a docs page only\n  const toastTrigger = document\.getElementById\(\u0027liveToastBtn\u0027\)\n  const toastLiveExample = document\.getElementById\(\u0027liveToast\u0027\)\n  if \(toastTrigger\) \{\n    toastTrigger\.addEventListener\(\u0027click\u0027, \(\) =\u003e \{\n      const toast = new bootstrap\.Toast\(toastLiveExample\)\n\n      toast\.show\(\)\n    \}\)\n  \}\n\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Alerts\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Used in \u0027Show live toast\u0027 example in docs or StackBlitz\n  const alertPlaceholder = document\.getElementById\(\u0027liveAlertPlaceholder\u0027\)\n  const alertTrigger = document\.getElementById\(\u0027liveAlertBtn\u0027\)\n\n  const appendAlert = \(message, type\) =\u003e \{\n    const wrapper = document\.createElement\(\u0027div\u0027\)\n    wrapper\.innerHTML = \[\n      `\u003cdiv class=\u0022alert alert\-\$\{type\} alert\-dismissible\u0022 role=\u0022alert\u0022\u003e`,\n      `   \u003cdiv\u003e\$\{message\}\u003c\/div\u003e`,\n      \u0027   \u003cbutton type=\u0022button\u0022 class=\u0022btn\-close\u0022 data\-bs\-dismiss=\u0022alert\u0022 aria\-label=\u0022Close\u0022\u003e\u003c\/button\u003e\u0027,\n      \u0027\u003c\/div\u003e\u0027\n    \]\.join\(\u0027\u0027\)\n\n    alertPlaceholder\.append\(wrapper\)\n  \}\n\n  if \(alertTrigger\) \{\n    alertTrigger\.addEventListener\(\u0027click\u0027, \(\) =\u003e \{\n      appendAlert\(\u0027Nice, you triggered this alert message!\u0027, \u0027success\u0027\)\n    \}\)\n  \}\n\n  \/\/ \-\-\-\-\-\-\-\-\n  \/\/ Carousels\n  \/\/ \-\-\-\-\-\-\-\-\n  \/\/ Instantiate all non\-autoplaying carousels in a docs or StackBlitz page\n  document\.querySelectorAll\(\u0027\.carousel:not\(\[data\-bs\-ride=\u0022carousel\u0022\]\)\u0027\)\n    \.forEach\(carousel =\u003e \{\n      bootstrap\.Carousel\.getOrCreateInstance\(carousel\)\n    \}\)\n\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Checks \u0026 Radios\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Indeterminate checkbox example in docs and StackBlitz\n  document\.querySelectorAll\(\u0027\.bd\-example\-indeterminate \[type=\u0022checkbox\u0022\]\u0027\)\n    \.forEach\(checkbox =\u003e \{\n      if \(checkbox\.id\.includes\(\u0027Indeterminate\u0027\)\) \{\n        checkbox\.indeterminate = true\n      \}\n    \}\)\n\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Links\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Disable empty links in docs examples only\n  document\.querySelectorAll\(\u0027\.bd\-content \[href=\u0022#\u0022\]\u0027\)\n    \.forEach\(link =\u003e \{\n      link\.addEventListener\(\u0027click\u0027, event =\u003e \{\n        event\.preventDefault\(\)\n      \}\)\n    \}\)\n\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Modal\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Modal \u0027Varying modal content\u0027 example in docs and StackBlitz\n  const exampleModal = document\.getElementById\(\u0027exampleModal\u0027\)\n  if \(exampleModal\) \{\n    exampleModal\.addEventListener\(\u0027show\.bs\.modal\u0027, event =\u003e \{\n      \/\/ Button that triggered the modal\n      const button = event\.relatedTarget\n      \/\/ Extract info from data\-bs\-\* attributes\n      const recipient = button\.getAttribute\(\u0027data\-bs\-whatever\u0027\)\n\n      \/\/ Update the modal\u0027s content\.\n      const modalTitle = exampleModal\.querySelector\(\u0027\.modal\-title\u0027\)\n      const modalBodyInput = exampleModal\.querySelector\(\u0027\.modal\-body input\u0027\)\n\n      modalTitle\.textContent = `New message to \$\{recipient\}`\n      modalBodyInput\.value = recipient\n    \}\)\n  \}\n\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ Offcanvas\n  \/\/ \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\n  \/\/ \u0027Offcanvas components\u0027 example in docs only\n  const myOffcanvas = document\.querySelectorAll\(\u0027\.bd\-example\-offcanvas \.offcanvas\u0027\)\n  if \(myOffcanvas\) \{\n    myOffcanvas\.forEach\(offcanvas =\u003e \{\n      offcanvas\.addEventListener\(\u0027show\.bs\.offcanvas\u0027, event =\u003e \{\n        event\.preventDefault\(\)\n      \}, false\)\n    \}\)\n  \}\n\}\)\(\)\n"
+                : null;
+            const project = {
+                files: {
+                    "index.html": markup,
+                    "index.js": jsSnippetContent,
+                },
+                title: "Bootstrap Example",
+                description: `Official example from ${window.location.href}`,
+                template: jsSnippet ? "javascript" : "html",
+                tags: ["bootstrap"],
+            };
+
+            StackBlitzSDK.openProject(project, { openFile: "index.html" });
+        };
+    </script>
+
+    <div class="position-fixed"><input type="text" tabindex="-1" /></div>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+{% extends 'celik/base.html' %}
+{% load static %}
+
+{% block title %}Tete :: Pickles {% endblock %}
+
+
+{% block hero %}
+<div class="px-4 py-5 mb-5 text-center">
+    <h1 class="display-5 fw-bold text-theme">Tete recipe</h1>    
+    <img src="{% static 'assets/images/bg/picle-jars-removebg.png' %}" class="img-fluid rounded-start" alt="...">
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-start">
+            Want to jazz up your next salad or bowl? Add pickled red onions! Tangy & sweet, they're the best way to give
+            almost any dish a bright pop of flavor!
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<h3 class="fw-semibold">Туршија</h3>
+<p class="pe-lg-5">
+    Its popularity is undoubtedly linked to the variety of its recipes that make today’s macaron the
+    result of a long evolution of the macarons of the past. The name macaron would be of Arab
+    origin; it is even known and consumed in Syria under the name of louzieh (meaning almond)
+    because it is closely associated with the production of this walnut. The earliest known recipes
+    date back to the Renaissance.
+</p>
+<div class="row">
+
+    <div class="col-md-12 mb-4">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'images/category/pickles/red-onion-5x4.jpg' %}" class="img-fluid rounded-start"
+                        alt="red-pikle">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Обарен црвен кромид</h5>
+                        <p class="card-text">Како додаток на салати или чорби.Add pickled red onions! Tangy & sweet,
+                            they're the best way to give almost any dish a bright pop of flavor!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="{% url 'celik:red-onion' %}" class="card-link">рецепт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 mb-4">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'images/category/macaron-4x3.jpg' %}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Macarons</h5>
+                        <p class="card-text">When King Louis XIV decided to reside at Versailles in
+                            1682, his chefs served
+                            macarons to the guests to welcome them.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                ago</small></p>
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 mb-4">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'images/category/macaron-4x3.jpg' %}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Macarons</h5>
+                        <p class="card-text">When King Louis XIV decided to reside at Versailles in
+                            1682, his chefs served
+                            macarons to the guests to welcome them.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                ago</small></p>
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block aside %}
+<img src="{% static 'images/tete-chef.jpg' %}" class="img-fluid mt-3 mx-auto rounded" alt="tete">
+{% endblock %}
